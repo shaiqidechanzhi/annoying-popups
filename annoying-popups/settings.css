@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #1c1c1e;
+  color: #ddd;
+  padding: 20px;
+}
+
+.settings-container { max-width: 800px; margin: 0 auto; }
+h1 { text-align: center; margin-bottom: 5px; font-size: 28px; color: #eee; }
+.subtitle { text-align: center; color: #777; margin-bottom: 20px; }
+
+.tab-nav { display: flex; gap: 5px; margin-bottom: 20px; }
+.tab-btn {
+  flex: 1; padding: 12px; border: 1px solid rgba(255,255,255,0.1);
+  background: transparent; color: #999; border-radius: 10px;
+  cursor: pointer; font-size: 14px; transition: all 0.2s; font-family: inherit;
+}
+.tab-btn.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff; }
+.tab-btn:hover { border-color: rgba(255,255,255,0.2); }
+
+.tab-content {
+  display: none;
+  background: rgba(44,44,48,0.5); backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 14px;
+  padding: 20px; margin-bottom: 20px;
+}
+.tab-content.active { display: block; }
+
+.ad-list { display: flex; flex-direction: column; gap: 10px; }
+.ad-item {
+  background: rgba(0,0,0,0.2); border-radius: 12px; padding: 16px;
+  display: flex; justify-content: space-between; align-items: center; gap: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.ad-item-info { flex: 1; }
+.ad-item-title { font-weight: 600; margin-bottom: 5px; color: #ddd; }
+.ad-item-url { font-size: 12px; color: #8cb8e0; word-break: break-all; }
+.ad-item-actions { display: flex; gap: 8px; }
+
+.btn-sm { padding: 7px 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; cursor: pointer; font-size: 12px; font-family: inherit; }
+.btn-edit { background: rgba(255,255,255,0.08); color: #ccc; }
+.btn-delete { background: rgba(255,130,130,0.12); color: #ffaaaa; border-color: rgba(255,130,130,0.25); }
+.btn-edit:hover { background: rgba(255,255,255,0.14); }
+.btn-delete:hover { background: rgba(255,130,130,0.2); }
+
+.hint { font-size: 13px; color: #888; margin-bottom: 15px; line-height: 1.6; }
+.custom-html-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.add-custom-html, .add-form {
+  background: rgba(0,0,0,0.2); border-radius: 12px; padding: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.add-custom-html label, .add-form label { display: block; margin-bottom: 5px; font-size: 13px; color: #999; }
+.add-custom-html input, .add-custom-html textarea, .add-form input, .add-form select {
+  width: 100%; padding: 9px 12px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12); background: rgba(0,0,0,0.3);
+  color: #ddd; font-size: 14px; margin-bottom: 10px; font-family: inherit;
+  outline: none;
+}
+.add-custom-html textarea { resize: vertical; font-family: 'Courier New', monospace; }
+.add-form { display: flex; flex-direction: column; }
+
+.btn {
+  padding: 12px 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
+  cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; font-family: inherit;
+}
+.btn:hover { transform: scale(1.02); }
+.btn-add { background: rgba(100,200,130,0.15); color: #a0e0b0; border-color: rgba(100,200,130,0.3); width: 100%; }
+.btn-add:hover { background: rgba(100,200,130,0.25); }
+.btn-reset { background: rgba(255,180,80,0.12); color: #ffb060; border-color: rgba(255,180,80,0.25); }
+.btn-save { background: rgba(255,255,255,0.08); color: #ddd; }
+.btn-save:hover { background: rgba(255,255,255,0.14); }
+
+.actions { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
+#statusMsg { text-align: center; font-size: 14px; padding: 10px; border-radius: 10px; }
+#statusMsg.success { background: rgba(100,200,130,0.12); color: #a0e0b0; }
+#statusMsg.error { background: rgba(255,130,130,0.12); color: #ffaaaa; }

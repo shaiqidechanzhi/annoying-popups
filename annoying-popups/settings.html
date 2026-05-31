@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>弹窗内容设置</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-container">
+    <h1>⚙️ 弹窗内容设置</h1>
+    <p class="subtitle">在这里自定义弹窗内容和 HTML</p>
+    
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="preset">📋 预设广告列表</button>
+      <button class="tab-btn" data-tab="custom">✏️ 自定义 HTML 广告</button>
+      <button class="tab-btn" data-tab="add">➕ 添加新广告</button>
+    </div>
+    
+    <!-- 预设列表 -->
+    <div class="tab-content active" id="tab-preset">
+      <div class="ad-list" id="presetAdList"></div>
+    </div>
+    
+    <!-- 自定义 HTML -->
+    <div class="tab-content" id="tab-custom">
+      <p class="hint">可以编写任意 HTML 作为弹窗内容。链接要可点击请使用 &lt;a&gt; 标签。</p>
+      <div class="custom-html-list" id="customHtmlList"></div>
+      
+      <div class="add-custom-html">
+        <h3>添加自定义 HTML 广告</h3>
+        <label>标题：</label>
+        <input type="text" id="customTitle" placeholder="广告标题">
+        <label>HTML 内容：</label>
+        <textarea id="customHtml" rows="6" placeholder="<div style='padding:20px;'><h2>我的广告</h2><a href='https://example.com' target='_blank'>点击这里</a></div>"></textarea>
+        <button class="btn btn-add" id="addCustomHtmlBtn">添加</button>
+      </div>
+    </div>
+    
+    <!-- 添加新广告 -->
+    <div class="tab-content" id="tab-add">
+      <div class="add-form">
+        <label>标题：</label>
+        <input type="text" id="newAdTitle" placeholder="弹窗显示的标题">
+        <label>链接 URL：</label>
+        <input type="url" id="newAdUrl" placeholder="https://...">
+        <label>类型：</label>
+        <select id="newAdType">
+          <option value="bilibili">B站链接</option>
+          <option value="custom">自定义</option>
+        </select>
+        <button class="btn btn-add" id="addNewAdBtn">添加广告</button>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="btn btn-reset" id="resetBtn">🔄 恢复默认</button>
+      <button class="btn btn-save" id="saveBtn">💾 保存所有更改</button>
+    </div>
+    
+    <div id="statusMsg"></div>
+  </div>
+  
+  <script src="settings.js"></script>
+</body>
+</html>
